@@ -1,0 +1,47 @@
+$open-sans: Open Sans Light, sans-serif;
+$oswald: Oswald Regular, serif;
+@import "reset";
+@import "base";
+@import "fonts";
+$photo-color: #eaf2f4;
+
+
+.container {
+	width: 835px;
+	margin: 0 auto;
+	display: table;
+	
+	.cart {
+		padding: 30px 50px 70px 50px;
+		display: table;
+		
+		.cart-row {
+			display: table-row;
+		
+			.photo-cart {
+				display: table-cell;
+				background: $photo-color;
+				width: 398px;
+				height: 420px;
+				vertical-align: middle;
+				
+				img {
+					width: 326px;
+					height: 414px;
+					margin-top: -15px;
+				}
+			}
+			
+			.info-cart {
+				display: table-cell;
+				padding-left: 50px;
+				
+				.cart-title {
+					font: 24px $oswald;
+					font-weight: bold;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}

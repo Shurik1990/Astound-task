@@ -1,0 +1,15 @@
+$open-sans: Open Sans Light, sans-serif;
+$body-color: #f6f6f6;
+
+body {
+	font: 12px $open-sans;
+    background: $body-color;
+    width: 100%;
+}
+a {
+	text-decoration: none;
+    cursor: pointer;
+}
+button {
+    cursor: pointer;
+}

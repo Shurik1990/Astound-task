@@ -1,37 +1,61 @@
-*{ margin: 0; padding: 0; }
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0; }
 
-@font-face {
-    font-family: "Myriad Pro Regular";
-    src: url("../fonts/MyriadPro-Regular.otf");
-    font-style: normal;
-    font-weight: normal;
-}
-@font-face {
-    font-family: "Segoe WP Light";
-    src: url("../fonts/Segoe WP Light.ttf");
-    font-style: normal;
-    font-weight: normal;
-}
-
-/* Media Queries */
-
-
-/* General */
-html, body {
-    font: 12px Proxima Nova, sans-serif;
-    margin: 0;
-    background: #fff;
-    width: 100%;
-	overflow-x: hidden;
-
-}
-
-.clear {
-	clear: both;
-	font-size: 0px;
-}
+body {
+  font: 12px Open Sans Light, sans-serif;
+  background: #f6f6f6;
+  width: 100%; }
 
 a {
-	text-decoration: none;
-    cursor: pointer;
-}
+  text-decoration: none;
+  cursor: pointer; }
+
+button {
+  cursor: pointer; }
+
+@font-face {
+  font-family: 'Open Sans Light';
+  src: url("../fonts/Open Sans Light.eot");
+  src: url("../fonts/Open Sans Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Open Sans Light.woff2") format("woff2"), url("../fonts/Open Sans Light.woff") format("woff"), url("../fonts/Open Sans Light.ttf") format("truetype"), url("../fonts/Open Sans Light.svg#Open Sans Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2212; }
+@font-face {
+  font-family: 'Oswald Regular';
+  src: url("../fonts/Oswald Regular.eot");
+  src: url("../fonts/Oswald Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Oswald Regular.woff2") format("woff2"), url("../fonts/Oswald Regular.woff") format("woff"), url("../fonts/Oswald Regular.ttf") format("truetype"), url("../fonts/Oswald Regular.svg#Oswald Regular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-030A; }
+.container {
+  width: 835px;
+  margin: 0 auto;
+  display: table; }
+  .container .cart {
+    padding: 30px 50px 70px 50px;
+    display: table; }
+    .container .cart .cart-row {
+      display: table-row; }
+      .container .cart .cart-row .photo-cart {
+        display: table-cell;
+        background: #eaf2f4;
+        width: 398px;
+        height: 420px;
+        vertical-align: middle; }
+        .container .cart .cart-row .photo-cart img {
+          width: 326px;
+          height: 414px;
+          margin-top: -15px; }
+      .container .cart .cart-row .info-cart {
+        display: table-cell;
+        padding-left: 50px; }
+        .container .cart .cart-row .info-cart .cart-title {
+          font: 24px Oswald Regular, serif;
+          font-weight: bold;
+          text-transform: uppercase; }
