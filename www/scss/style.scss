@@ -11,6 +11,8 @@ $photo-color: #eaf2f4;
 $black: #2c303d;
 $red: #ce2c52;
 $green: #8ae6cf;
+$blue: #2c87ce;
+$white: #fff;
 
 
 .container {
@@ -54,18 +56,17 @@ $green: #8ae6cf;
 				.cart-item {
 					font: 10px $open-sans;
 					color: #2c303d;
-					padding: 20px 0 25px 0;
+					padding: 15px 0 20px 0;
 				}
 				
 				.price {
 					font: 24px $opensans-bold;
 					font-weight: bold;
-					padding-bottom: 25px;
+					padding-bottom: 15px;
 				}
 				
 				.cart-price {
 					color: $black;
-					
 				}
 				
 				.old-cart-price {
@@ -73,11 +74,222 @@ $green: #8ae6cf;
 					color: $red;
 				}
 				
+				.cart-share {
+					display: table;
+					
+					.share-row {
+						display: table-row;
+						
+						.cart-rating {
+							display: table-cell;
+							vertical-align: middle;
+							
+							#stars input:checked ~ label, #stars label, #stars label:hover, #stars label:hover ~ label {
+								background: url("../img/stars.png") no-repeat;
+							}
+							
+							#stars {
+								overflow: hidden;
+								*zoom: 1;
+								position: relative;
+								float: left;
+								
+								#star-1 {
+								left: 0px;
+								}
+								#star-2 {
+									left: 18px;
+								}
+								#star-3 {
+									left: 36px;
+								}
+								#star-4 {
+									left: 54px;
+								}
+								#star-5 {
+									left: 72px;
+								}
+								#star-6 {
+									left: 90px;
+								}
+							}
+							
+							#stars input {
+								filter:
+							progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+								opacity: 0;
+								width: 18px;
+								height: 18px;
+								position: absolute;
+								top: 0;
+								z-index: 0;
+							}
+							
+							#stars input:checked ~ label {
+								background-position: 0 -18px;
+								height: 18px;
+								width: 18px;
+							}
+							
+							#stars label {
+								background-position: 0 0;
+								height: 18px;
+								width: 18px;
+								float: right;
+								cursor: pointer;
+								position: relative;
+								z-index: 1;
+							}
+							
+							#stars label:hover, #stars label:hover ~ label {
+								background-position: 0 -18px;
+								height: 18px;
+								width: 18px;
+							}
+						}
+						
+						.share {
+							display: table-cell;
+							font: 18px $opensans-bold;
+							color: $blue;
+							padding-left: 15px;
+							
+							a {
+								color: $blue;
+							}
+							
+							.modal {
+								position: fixed;
+								top: 40px;
+								left: 50px;
+								right: 0;
+								bottom: 0;
+								z-index: 10000;
+								-webkit-transition: opacity 300ms ease-in;
+								-moz-transition: opacity 300ms ease-in;
+								transition: opacity 300ms ease-in;
+								opacity: 0;
+								pointer-events: none;
+								
+								a[href="#close"] {
+									position: absolute;
+									right: 25px;
+									top: 25px;
+									color: transparent;
+								}
+								
+								a[href="#close"]:focus {
+									outline: none;
+								}
+
+							}
+							
+							.modal:target {
+								opacity: 1;
+								pointer-events: auto;
+							}
+							.modal > div {
+								width: 270px;
+								height: 87px;
+								background: url("../img/background-share.png") no-repeat;
+								position: relative;
+								margin: 10% 51%;
+								padding: 25px 15px 20px 15px;
+
+							}
+							
+							.modal:target > div {
+								-webkit-animation-name: bounce;
+							}
+							
+							@-webkit-keyframes bounce {
+								0% {
+									-webkit-transform: scale3d(0.1,0.1,1);
+									-webkit-box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+								}
+								55% {
+									-webkit-transform: scale3d(1.08,1.08,1);
+									-webkit-box-shadow: 0 10px 20px rgba(0,0,0,0);
+								}
+								75% {
+									-webkit-transform: scale3d(0.95,0.95,1);
+									-webkit-box-shadow: 0 0 20px rgba(0,0,0,0.9);
+								}
+								100% {
+									-webkit-transform: scale3d(1,1,1);
+									-webkit-box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+								}
+							}
+							
+							
+							.buttons-share {
+								width: 270px;
+								
+								.social {
+									display: inline-block;
+									margin-top: 10px;
+									width: 41px;
+									height: 41px;
+									padding-right: 10px;
+									
+									img {
+										border-radius: 50%;
+									}
+									
+									img:hover {
+										background-color: #ce2c325c;
+										border-radius: 50%;
+										transition: all 0.1s ease-in;
+									}
+								}
+									
+								.social-i {
+									padding-right: 0;
+								}
+							}
+							
+							
+							
+						}
+					}
+				}
+				
 				.cart-description {
 					font: 12px $open-sans;
 					color: $black;
-					padding: 30px 0 25px 0;
+					padding: 15px 0 15px 0;
 					width: 95%;
+				}
+				
+				.cart-size {
+					display: table;
+					
+					.size-row {
+						display: table-row;
+						
+						.size-title {
+							display: table-cell;
+							font: 14px $opensans-bold;
+							font-weight: bold;
+							color: $black;
+							text-transform: uppercase;
+							vertical-align: middle;
+						}
+						
+						.size-photo {
+							display: table-cell;
+							padding-left: 15px;
+							
+							img {
+								padding-right: 10px;
+							}
+							
+							a:hover {
+								opacity: 0.6;
+								transition: all 0.2s ease-in;
+							}
+						}
+					}
 				}
 				
 				button[name="add"] {
@@ -85,7 +297,7 @@ $green: #8ae6cf;
 					width: 214px;
 					height: 44px;
 					text-transform: uppercase;
-					margin-top: 25px;
+					margin-top: 20px;
 					line-height: 22px;
 					background-color: $green;
 					border-radius: 25px;

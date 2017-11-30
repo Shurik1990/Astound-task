@@ -73,27 +73,163 @@ button {
         .container .cart .cart-row .info-cart .cart-item {
           font: 10px Open Sans Light, sans-serif;
           color: #2c303d;
-          padding: 20px 0 25px 0; }
+          padding: 15px 0 20px 0; }
         .container .cart .cart-row .info-cart .price {
           font: 24px Open Sans, sans-serif;
           font-weight: bold;
-          padding-bottom: 25px; }
+          padding-bottom: 15px; }
         .container .cart .cart-row .info-cart .cart-price {
           color: #2c303d; }
         .container .cart .cart-row .info-cart .old-cart-price {
           padding-left: 20px;
           color: #ce2c52; }
+        .container .cart .cart-row .info-cart .cart-share {
+          display: table; }
+          .container .cart .cart-row .info-cart .cart-share .share-row {
+            display: table-row; }
+            .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating {
+              display: table-cell;
+              vertical-align: middle; }
+              .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating #stars input:checked ~ label, .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating #stars label, .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating #stars label:hover, .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating #stars label:hover ~ label {
+                background: url("../img/stars.png") no-repeat; }
+              .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating #stars {
+                overflow: hidden;
+                *zoom: 1;
+                position: relative;
+                float: left; }
+                .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating #stars #star-1 {
+                  left: 0px; }
+                .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating #stars #star-2 {
+                  left: 18px; }
+                .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating #stars #star-3 {
+                  left: 36px; }
+                .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating #stars #star-4 {
+                  left: 54px; }
+                .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating #stars #star-5 {
+                  left: 72px; }
+                .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating #stars #star-6 {
+                  left: 90px; }
+              .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating #stars input {
+                filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+                opacity: 0;
+                width: 18px;
+                height: 18px;
+                position: absolute;
+                top: 0;
+                z-index: 0; }
+              .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating #stars input:checked ~ label {
+                background-position: 0 -18px;
+                height: 18px;
+                width: 18px; }
+              .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating #stars label {
+                background-position: 0 0;
+                height: 18px;
+                width: 18px;
+                float: right;
+                cursor: pointer;
+                position: relative;
+                z-index: 1; }
+              .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating #stars label:hover, .container .cart .cart-row .info-cart .cart-share .share-row .cart-rating #stars label:hover ~ label {
+                background-position: 0 -18px;
+                height: 18px;
+                width: 18px; }
+            .container .cart .cart-row .info-cart .cart-share .share-row .share {
+              display: table-cell;
+              font: 18px Open Sans, sans-serif;
+              color: #2c87ce;
+              padding-left: 15px; }
+              .container .cart .cart-row .info-cart .cart-share .share-row .share a {
+                color: #2c87ce; }
+              .container .cart .cart-row .info-cart .cart-share .share-row .share .modal {
+                position: fixed;
+                top: 40px;
+                left: 50px;
+                right: 0;
+                bottom: 0;
+                z-index: 10000;
+                -webkit-transition: opacity 300ms ease-in;
+                -moz-transition: opacity 300ms ease-in;
+                transition: opacity 300ms ease-in;
+                opacity: 0;
+                pointer-events: none; }
+                .container .cart .cart-row .info-cart .cart-share .share-row .share .modal a[href="#close"] {
+                  position: absolute;
+                  right: 25px;
+                  top: 25px;
+                  color: transparent; }
+                .container .cart .cart-row .info-cart .cart-share .share-row .share .modal a[href="#close"]:focus {
+                  outline: none; }
+              .container .cart .cart-row .info-cart .cart-share .share-row .share .modal:target {
+                opacity: 1;
+                pointer-events: auto; }
+              .container .cart .cart-row .info-cart .cart-share .share-row .share .modal > div {
+                width: 270px;
+                height: 87px;
+                background: url("../img/background-share.png") no-repeat;
+                position: relative;
+                margin: 10% 51%;
+                padding: 25px 15px 20px 15px; }
+              .container .cart .cart-row .info-cart .cart-share .share-row .share .modal:target > div {
+                -webkit-animation-name: bounce; }
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: scale3d(0.1, 0.1, 1);
+    -webkit-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); }
+  55% {
+    -webkit-transform: scale3d(1.08, 1.08, 1);
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0); }
+  75% {
+    -webkit-transform: scale3d(0.95, 0.95, 1);
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    -webkit-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); } }
+              .container .cart .cart-row .info-cart .cart-share .share-row .share .buttons-share {
+                width: 270px; }
+                .container .cart .cart-row .info-cart .cart-share .share-row .share .buttons-share .social {
+                  display: inline-block;
+                  margin-top: 10px;
+                  width: 41px;
+                  height: 41px;
+                  padding-right: 10px; }
+                  .container .cart .cart-row .info-cart .cart-share .share-row .share .buttons-share .social img {
+                    border-radius: 50%; }
+                  .container .cart .cart-row .info-cart .cart-share .share-row .share .buttons-share .social img:hover {
+                    background-color: #ce2c325c;
+                    border-radius: 50%;
+                    transition: all 0.1s ease-in; }
+                .container .cart .cart-row .info-cart .cart-share .share-row .share .buttons-share .social-i {
+                  padding-right: 0; }
         .container .cart .cart-row .info-cart .cart-description {
           font: 12px Open Sans Light, sans-serif;
           color: #2c303d;
-          padding: 30px 0 25px 0;
+          padding: 15px 0 15px 0;
           width: 95%; }
+        .container .cart .cart-row .info-cart .cart-size {
+          display: table; }
+          .container .cart .cart-row .info-cart .cart-size .size-row {
+            display: table-row; }
+            .container .cart .cart-row .info-cart .cart-size .size-row .size-title {
+              display: table-cell;
+              font: 14px Open Sans, sans-serif;
+              font-weight: bold;
+              color: #2c303d;
+              text-transform: uppercase;
+              vertical-align: middle; }
+            .container .cart .cart-row .info-cart .cart-size .size-row .size-photo {
+              display: table-cell;
+              padding-left: 15px; }
+              .container .cart .cart-row .info-cart .cart-size .size-row .size-photo img {
+                padding-right: 10px; }
+              .container .cart .cart-row .info-cart .cart-size .size-row .size-photo a:hover {
+                opacity: 0.6;
+                transition: all 0.2s ease-in; }
         .container .cart .cart-row .info-cart button[name="add"] {
           display: block;
           width: 214px;
           height: 44px;
           text-transform: uppercase;
-          margin-top: 25px;
+          margin-top: 20px;
           line-height: 22px;
           background-color: #8ae6cf;
           border-radius: 25px;
