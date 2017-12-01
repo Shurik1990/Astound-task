@@ -240,3 +240,42 @@ button {
         .container .cart .cart-row .info-cart button[name="add"]:hover {
           background-color: #ce2c52;
           transition: all 0.3s ease-in; }
+  .container .like-grid .title-grid {
+    font: 22px Open Sans, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #2c303d;
+    padding-bottom: 10px; }
+  .container .like-grid .products-grid ul {
+    list-style: none;
+    display: table; }
+    .container .like-grid .products-grid ul li {
+      display: table-row;
+      display: inline-block;
+      padding: 10px 0 10px 0;
+      position: relative; }
+      .container .like-grid .products-grid ul li img {
+        display: table-cell;
+        display: block; }
+    .container .like-grid .products-grid ul .boy-1, .container .like-grid .products-grid ul .boy-4 {
+      padding-right: 20px; }
+    .container .like-grid .products-grid ul .boy-2, .container .like-grid .products-grid ul .boy-5 {
+      padding-right: 19px; }
+    .container .like-grid .products-grid ul .price-grid {
+      position: absolute;
+      display: inline-block;
+      background: #8ae6cf;
+      z-index: 10;
+      font: 14px Open Sans, sans-serif;
+      color: #2c303d;
+      padding: 0 5px 0 5px;
+      height: 20px;
+      right: 0;
+      bottom: 30px; }
+    .container .like-grid .products-grid ul .old-price-grid {
+      color: #ce2c52;
+      padding-left: 15px; }
+    .container .like-grid .products-grid ul .col-pd {
+      right: 19px; }
+    .container .like-grid .products-grid ul .col-lg {
+      right: 20px; }

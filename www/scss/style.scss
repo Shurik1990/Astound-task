@@ -314,4 +314,69 @@ $white: #fff;
 			}
 		}
 	}
+	
+	.like-grid {
+		
+		.title-grid {
+			font: 22px $opensans-bold;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			color: $black;
+			padding-bottom: 10px;
+		}
+			
+		.products-grid {
+				
+			ul {
+				list-style: none;
+				display: table;
+				
+				li {
+					display: table-row;
+					display: inline-block;
+					padding: 10px 0 10px 0;
+					position: relative;
+
+						img {
+							display: table-cell;
+							display: block;
+						}
+				}
+				
+				.boy-1, .boy-4,{
+					padding-right: 20px;
+				}
+					
+				.boy-2, .boy-5,{
+					padding-right: 19px;
+				}
+				
+				.price-grid {
+					position: absolute;
+					display: inline-block;
+					background: $green;
+					z-index: 10;
+					font: 14px $opensans-bold;
+					color: $black;
+					padding: 0 5px 0 5px;
+					height: 20px;
+					right: 0;
+					bottom: 30px;
+				}
+					
+				.old-price-grid {
+					color: $red;
+					padding-left: 15px;
+				}
+				
+				.col-pd {
+					right: 19px;
+				}
+				
+				.col-lg {
+					right: 20px;
+				}
+			}
+		}
+	}
 }
