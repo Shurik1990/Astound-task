@@ -19,7 +19,7 @@ $blue: #2c87ce;
 $white: #fff;
 
 /* Media Queries */
-$tablet: "(max-width: 640px)";
+$tablet: "(max-width: 720px)";
 $mobile: "(max-width: 400px)";
 
 @mixin respond-to($media) {
@@ -45,12 +45,22 @@ $mobile: "(max-width: 400px)";
 		padding-left: 38px;
 	}
 	
+	@include respond-to($mobile) {
+		width: 320px;
+		padding-right: 38px;
+		padding-left: 38px;
+	}
+	
 	.cart {
 		padding: 30px 0 70px 0;
 		display: table;
 		
 		@include respond-to($tablet) {
 			padding: 95px 0 60px 0;
+		}
+		
+		@include respond-to($mobile) {
+			padding: 125px 0 85px 0;
 		}
 		
 		.cart-row {
@@ -68,6 +78,15 @@ $mobile: "(max-width: 400px)";
 					padding-bottom: 80px;
 				}
 				
+				@include respond-to($mobile) {
+					display: block;
+					width: 400px;
+					height: 420px;
+					padding-bottom: 0;
+					margin-left: -40px;
+					margin-right: -40px;
+				}
+				
 				.photo-background {
 					background: $photo-color;
 					
@@ -81,6 +100,11 @@ $mobile: "(max-width: 400px)";
 							width: 263px;
 							height: 349px;
 						}
+						
+						@include respond-to($mobile) {
+							width: 326px;
+							height: 414px;
+						}
 					}
 				}
 				
@@ -92,6 +116,11 @@ $mobile: "(max-width: 400px)";
 				
 				@include respond-to($tablet) {
 					padding-left: 20px;
+				}
+				
+				@include respond-to($mobile) {
+					display: block;
+					padding-left: 0;
 				}
 				
 				.cart-title {
@@ -107,6 +136,12 @@ $mobile: "(max-width: 400px)";
 						left: 38px;
 						top: 35px;
 						margin-top: 0;
+						top: 25px;
+					}
+					
+					@include respond-to($mobile) {
+						width: 260px;
+						left: 40px;
 					}
 				}
 				
@@ -117,6 +152,11 @@ $mobile: "(max-width: 400px)";
 					
 					@include respond-to($tablet) {
 						padding: 0 0 5px 0;
+					}
+					
+					@include respond-to($mobile) {
+						font: 12px $open-sans;
+						padding: 15px 0 10px 0;
 					}
 				}
 				
@@ -143,8 +183,17 @@ $mobile: "(max-width: 400px)";
 				.cart-share {
 					display: table;
 					
+					@include respond-to($mobile) {
+						display: inline-block;
+						height: 80px;
+					}
+					
 					.share-row {
 						display: table-row;
+						
+						@include respond-to($mobile) {
+							display: block;
+						}
 						
 						.cart-rating {
 							display: table-cell;
@@ -328,6 +377,15 @@ $mobile: "(max-width: 400px)";
 							@include respond-to($tablet) {
 								display: block;
 							}
+							
+							@include respond-to($mobile) {
+								position: relative;
+								width: 270px;
+								float: left;
+								display: inline-block;
+								margin-left: -55px;
+								margin-top: -90px;
+							}
 								
 							.social {
 								display: inline-block;
@@ -365,6 +423,10 @@ $mobile: "(max-width: 400px)";
 					@include respond-to($tablet) {
 						display: block;
 					}
+					
+					@include respond-to($mobile) {
+						display: none;
+					}
 				}
 				
 				.cart-description {
@@ -376,6 +438,12 @@ $mobile: "(max-width: 400px)";
 					@include respond-to($tablet) {
 						padding: 10px 0 30px 0;
 						width: 95%;
+					}
+					
+					@include respond-to($mobile) {
+						font: 14px $open-sans;
+						padding: 30px 0 40px 0;
+						width: 90%;
 					}
 				}
 				
@@ -394,6 +462,14 @@ $mobile: "(max-width: 400px)";
 								
 						@include respond-to($tablet) {
 							display: block;
+						}
+						
+						@include respond-to($mobile) {
+							display: block;
+							font: 20px $opensans-bold;
+							text-align: center;
+							width: 320px;
+							padding-bottom: 20px;
 						}
 					}
 					
@@ -421,11 +497,20 @@ $mobile: "(max-width: 400px)";
 								padding-left: 0;
 							}
 							
+							@include respond-to($mobile) {
+								text-align: center;
+								width: 320px;
+							}
+							
 							img {
 								padding-right: 10px;
 								
 								@include respond-to($tablet) {
 									padding-right: 18px;
+								}
+								
+								@include respond-to($mobile) {
+									padding-right: 25px;
 								}
 							}
 							
@@ -433,36 +518,59 @@ $mobile: "(max-width: 400px)";
 								opacity: 0.6;
 								transition: all 0.2s ease-in;
 							}
+							
+							.pad-right {
+								padding-right: 0;
+									
+								@include respond-to($mobile) {
+									padding-right: 0 !important;
+								}
+							}
 						}
 					}
 				}
 				
-				button[name="add"] {
-					display: block;
-					width: 214px;
-					height: 44px;
-					text-transform: uppercase;
-					margin-top: 20px;
-					line-height: 22px;
-					background-color: $green;
-					border-radius: 25px;
-					border: none;
-					font: 14px $opensans-bold;
-					color: $black;
-					vertical-align: middle;
-					
-					@include respond-to($tablet) {
-						width: 222px;
-						height: 46px;
-						line-height: 23px;
-						font: 18px $opensans-bold;
-						letter-spacing: 2px;
+				.cart-button {
+					@include respond-to($mobile) {
+						margin-top: 30px;	
+						width: 320px;
 					}
-				}
 				
-				button[name="add"]:hover {
-					background-color: $red;
-					transition: all 0.3s ease-in;
+					button[name="add"] {
+						display: block;
+						width: 214px;
+						height: 44px;
+						text-transform: uppercase;
+						margin-top: 20px;
+						line-height: 22px;
+						background-color: $green;
+						border-radius: 25px;
+						border: none;
+						font: 14px $opensans-bold;
+						color: $black;
+						vertical-align: middle;
+						
+						@include respond-to($tablet) {
+							width: 222px;
+							height: 46px;
+							line-height: 23px;
+							font: 18px $opensans-bold;
+							letter-spacing: 2px;
+						}
+						
+						@include respond-to($mobile) {
+							margin: 0 auto;	
+							text-align: center;
+							width: 280px;
+							height: 58px;
+							border-radius: 45px;
+						}
+					}
+					
+					button[name="add"]:hover {
+						background-color: $red;
+						transition: all 0.3s ease-in;
+					}
 				}
 			}
 		}
@@ -481,9 +589,20 @@ $mobile: "(max-width: 400px)";
 				text-align: center;
 				padding-bottom: 15px;
 			}
+			
+			@include respond-to($mobile) {
+				font: 24px $opensans-bold;
+				text-align: center;
+				width: 320px;
+				padding-bottom: 20px;
+			}
 		}
 			
 		.products-grid {
+			@include respond-to($mobile) {
+				width: 320px;
+				text-align: center;
+			}
 				
 			ul {
 				list-style: none;
@@ -498,6 +617,10 @@ $mobile: "(max-width: 400px)";
 					@include respond-to($tablet) {
 						padding: 20px 38px 20px 0;
 					}
+					
+					@include respond-to($mobile) {
+						padding: 0;
+					}
 
 						img {
 							display: table-cell;
@@ -507,6 +630,11 @@ $mobile: "(max-width: 400px)";
 								width: 300px;
 								height: 285px;
 							}
+							
+							@include respond-to($mobile) {
+								width: 280px;
+								height: 265px;
+							}
 						}
 				}
 				
@@ -514,7 +642,11 @@ $mobile: "(max-width: 400px)";
 					padding-right: 0;
 					
 					@include respond-to($tablet) {
-						padding-right: 39px !important;
+						padding-right: 39px;
+					}
+					
+					@include respond-to($mobile) {
+						padding-right: 0;
 					}
 				}
 				
@@ -550,6 +682,13 @@ $mobile: "(max-width: 400px)";
 						bottom: 20px;
 						left: 0;
 						padding: 0;
+					}
+					
+					@include respond-to($mobile) {
+						width: 280px;
+						font: 18px $opensans-bold;
+						padding-top: 5px;
+						bottom: 0;
 					}
 				}
 				
