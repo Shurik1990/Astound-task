@@ -19,8 +19,9 @@ $blue: #2c87ce;
 $white: #fff;
 
 /* Media Queries */
-$tablet: "(max-width: 720px)";
-$mobile: "(max-width: 400px)";
+$tablet: "(max-width: 940px)";
+$tablet-small: "(max-width: 715px)";
+$mobile: "(max-width: 695px)";
 
 @mixin respond-to($media) {
     @media only screen and #{$media} {
@@ -51,9 +52,14 @@ $mobile: "(max-width: 400px)";
 		padding-left: 38px;
 	}
 	
+	.strike {
+		text-decoration: line-through;
+	}
+	
 	.cart {
 		padding: 30px 0 70px 0;
 		display: table;
+		position: relative;
 		
 		@include respond-to($tablet) {
 			padding: 95px 0 60px 0;
@@ -83,8 +89,8 @@ $mobile: "(max-width: 400px)";
 					width: 400px;
 					height: 420px;
 					padding-bottom: 0;
-					margin-left: -40px;
-					margin-right: -40px;
+					margin-left: -38px;
+					margin-right: -38px;
 				}
 				
 				.photo-background {
@@ -133,15 +139,14 @@ $mobile: "(max-width: 400px)";
 					
 					@include respond-to($tablet) {
 						position: absolute;
-						left: 38px;
+						left: 0px;
 						top: 35px;
 						margin-top: 0;
-						top: 25px;
 					}
 					
 					@include respond-to($mobile) {
 						width: 260px;
-						left: 40px;
+						left: 0px;
 					}
 				}
 				
@@ -372,7 +377,7 @@ $mobile: "(max-width: 400px)";
 							position: absolute;
 							width: 41px;
 							top: 100px;
-							left: 55px;
+							left: 15px;
 							
 							@include respond-to($tablet) {
 								display: block;
@@ -383,7 +388,7 @@ $mobile: "(max-width: 400px)";
 								width: 270px;
 								float: left;
 								display: inline-block;
-								margin-left: -55px;
+								margin-left: -15px;
 								margin-top: -90px;
 							}
 								
@@ -599,9 +604,15 @@ $mobile: "(max-width: 400px)";
 		}
 			
 		.products-grid {
-			@include respond-to($mobile) {
-				width: 320px;
+			@include respond-to($tablet-small) {
 				text-align: center;
+				display: block;
+				width: 512px;
+				margin: 0 auto;
+			}
+			
+			@include respond-to($mobile) {
+				display: none;
 			}
 				
 			ul {
@@ -618,6 +629,10 @@ $mobile: "(max-width: 400px)";
 						padding: 20px 38px 20px 0;
 					}
 					
+					@include respond-to($tablet-small) {
+						padding: 10px 20px 10px 0;
+					}
+					
 					@include respond-to($mobile) {
 						padding: 0;
 					}
@@ -629,6 +644,11 @@ $mobile: "(max-width: 400px)";
 							@include respond-to($tablet) {
 								width: 300px;
 								height: 285px;
+							}
+							
+							@include respond-to($tablet-small) {
+								width: 240px;
+								height: 228px;
 							}
 							
 							@include respond-to($mobile) {
@@ -643,6 +663,10 @@ $mobile: "(max-width: 400px)";
 					
 					@include respond-to($tablet) {
 						padding-right: 39px;
+					}
+					
+					@include respond-to($tablet-small) {
+						padding-right: 20px;
 					}
 					
 					@include respond-to($mobile) {
@@ -666,6 +690,7 @@ $mobile: "(max-width: 400px)";
 					background: $green;
 					z-index: 10;
 					font: 14px $opensans-bold;
+					letter-spacing: 1px;
 					color: $black;
 					padding: 0 5px 0 5px;
 					height: 20px;
@@ -682,6 +707,14 @@ $mobile: "(max-width: 400px)";
 						bottom: 20px;
 						left: 0;
 						padding: 0;
+						letter-spacing: 2px;
+					}
+					
+					@include respond-to($tablet-small) {
+						width: 240px;
+						bottom: 10px;
+						font: 18px $opensans-bold;
+						line-height: 30px;
 					}
 					
 					@include respond-to($mobile) {
@@ -692,7 +725,7 @@ $mobile: "(max-width: 400px)";
 					}
 				}
 				
-				strike {
+				.strike {
 					@include respond-to($tablet) {
 						display: none;
 					}
@@ -728,6 +761,128 @@ $mobile: "(max-width: 400px)";
 				.col-lg {
 					right: 19px;
 				}
+			}
+		}
+		
+		.carousel-wrapper {
+			display: none;
+			
+			@include respond-to($mobile) {
+				display: block;
+				width: 280px;
+				text-align: center;
+				position: relative;
+				margin-left: 20px;
+			}
+			
+			.carousel-item {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				opacity: 0;
+				transition: all 0.5s ease-in-out;
+				margin-bottom: 20px;
+				
+				.arrow {
+					position: absolute;
+					top: 0;
+					display: block;
+					width: 50px;
+					height: 100%;
+					-webkit-tap-highlight-color: rgba(0,0,0,0);
+					background: url("../img/left.png") 50% 50% / 30px no-repeat;
+
+					&.arrow-prev {
+						left: -50px;
+					}
+					  
+					&.arrow-next {
+						right: -50px;
+						-webkit-transform: rotate(180deg);
+								transform: rotate(180deg);
+					}
+				}
+
+				a {
+				padding: 0;
+				
+				img {
+					display: table-cell;
+					display: block;
+					width: 280px;
+					height: 265px;
+					position: relative;
+				}
+				
+				
+				.price-grid {
+					position: absolute;
+					display: inline-block;
+					background: $green;
+					z-index: 10;
+					font: 18px $opensans-bold;
+					color: $black;
+					height: 30px;
+					left: 0;
+					bottom: 0;
+					width: 280px;
+					opacity: 0.7;
+					padding-top: 5px;
+					letter-spacing: 1px;
+				}
+				
+				.strike {
+					display: none;
+				}
+				
+				.old-price-grid {
+					color: $red;
+					padding-left: 0;
+				}
+				
+				.new {
+					display: block;
+				}
+				
+				.hidden {
+					display: none;
+				}
+				
+				.col-pd {
+					right: 19px;
+				}
+				
+				.col-lg {
+					right: 19px;
+				}
+				
+				}
+				
+
+				
+			}
+			
+			[id^="target-item"] {
+					display: none;
+				}
+				
+			.item-1 {
+				z-index: 2;
+				opacity: 1;
+			}
+				
+			*:target ~ .item-1 {
+				opacity: 0;
+			}
+				
+			#target-item-1:target ~ .item-1 {
+				opacity: 1;
+			}
+				
+			#target-item-2:target ~ .item-2, #target-item-3:target ~ .item-3, #target-item-4:target ~ .item-4, #target-item-5:target ~ .item-5, #target-item-6:target ~ .item-6 {
+				z-index: 3;
+				opacity: 1;
 			}
 		}
 	}

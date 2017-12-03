@@ -5,6 +5,7 @@ body {
 	font: 12px $open-sans;
     background: $body-color;
     width: 100%;
+	overflow-x: hidden;
 }
 a {
 	text-decoration: none;
