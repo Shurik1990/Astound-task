@@ -56,6 +56,14 @@ $mobile: "(max-width: 695px)";
 		text-decoration: line-through;
 	}
 	
+	.non-strike {
+		text-decoration: line-through;
+		
+		@include respond-to($tablet) {
+			text-decoration: none;
+		}
+	}
+	
 	.cart {
 		padding: 30px 0 70px 0;
 		display: table;
@@ -157,6 +165,7 @@ $mobile: "(max-width: 695px)";
 					
 					@include respond-to($tablet) {
 						padding: 0 0 5px 0;
+						font: 11px $open-sans;
 					}
 					
 					@include respond-to($mobile) {
@@ -725,7 +734,11 @@ $mobile: "(max-width: 695px)";
 					}
 				}
 				
-				.strike {
+				.non-strike {
+					text-decoration: none;
+				}
+				
+				.strike, .non-strike {
 					@include respond-to($tablet) {
 						display: none;
 					}
