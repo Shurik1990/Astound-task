@@ -283,8 +283,10 @@ $mobile: "(max-width: 695px)";
 							color: $blue;
 							padding-left: 15px;
 							
-							@include respond-to($tablet) {
-								display: none;
+							span {
+								@include respond-to($tablet) {
+									display: none;
+								}
 							}
 							
 							a {
@@ -292,27 +294,56 @@ $mobile: "(max-width: 695px)";
 							}
 							
 							.modal {
-								position: fixed;
-								top: 40px;
-								left: 50px;
-								right: 0;
-								bottom: 0;
+								position: absolute;
+								top: 0px;
+								left: 455px;
 								z-index: 10000;
-								-webkit-transition: opacity 300ms ease-in;
-								-moz-transition: opacity 300ms ease-in;
-								transition: opacity 300ms ease-in;
 								opacity: 0;
 								pointer-events: none;
+								width: 300px;
+								height: 100px;
+								
+								@include respond-to($tablet) {
+									opacity: 1;
+									pointer-events: auto;
+								}
+								
 								
 								a[href="#close"] {
 									position: absolute;
 									right: 25px;
-									top: 25px;
+									top: 10px;
 									color: transparent;
+									
+									@include respond-to($tablet) {
+										display: none;
+									}
 								}
+								
 								
 								a[href="#close"]:focus {
 									outline: none;
+								}
+								
+								.text {
+									@include respond-to($tablet) {
+										display: none;
+									}
+								}
+								
+								.arrow {
+									width: 18px;
+									height: 18px;
+									position: absolute;
+									top: -9px;
+									left: 50%;
+									margin-left: -9px;
+									background-image: url("../img/arrow.png");
+									background-repeat: no-repeat;
+									
+									@include respond-to($tablet) {
+										display: none;
+									}
 								}
 
 							}
@@ -322,17 +353,38 @@ $mobile: "(max-width: 695px)";
 								pointer-events: auto;
 							}
 							.modal > div {
-								width: 270px;
-								height: 87px;
-								background: url("../img/background-share.png") no-repeat;
-								position: relative;
-								margin: 10% 51%;
-								padding: 25px 15px 20px 15px;
-
+								width: 265px;
+								background: $white;
+								position: absolute;
+								top: 195px;
+								padding: 10px 15px 10px 15px;
+								-webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.7);
+								-moz-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.7);
+								box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.7);
+								
+								@include respond-to($tablet) {
+									background: transparent;
+									-webkit-box-shadow: none;
+									-moz-box-shadow: none;
+									box-shadow: none;
+									left: -151%;
+									top: 90%;
+									width: 40px;
+								}
+								
+								@include respond-to($mobile) {
+									width: 265px;
+									top: 665%;
+									padding-left: 0;
+								}
 							}
 							
 							.modal:target > div {
 								-webkit-animation-name: bounce;
+								
+								@include respond-to($tablet) {
+									-webkit-animation-name: none;
+								}
 							}
 							
 							@-webkit-keyframes bounce {
@@ -357,6 +409,14 @@ $mobile: "(max-width: 695px)";
 							.buttons-share {
 								width: 270px;
 								
+								@include respond-to($tablet) {
+									width: 40px;
+								}
+								
+								@include respond-to($mobile) {
+									width: 270px;
+								}
+								
 								.social {
 									display: inline-block;
 									margin-top: 10px;
@@ -380,49 +440,12 @@ $mobile: "(max-width: 695px)";
 								}
 							}
 						}
+					
 						
-						.buttons-share {
-							display: none;
-							position: absolute;
-							width: 41px;
-							top: 100px;
-							left: 15px;
-							
-							@include respond-to($tablet) {
-								display: block;
-							}
-							
-							@include respond-to($mobile) {
-								position: relative;
-								width: 270px;
-								float: left;
-								display: inline-block;
-								margin-left: -15px;
-								margin-top: -90px;
-							}
-								
-							.social {
-								display: inline-block;
-								margin-top: 10px;
-								width: 41px;
-								height: 41px;
-								padding-right: 10px;
-									
-								img {
-									border-radius: 50%;
-								}
-									
-								img:hover {
-									background-color: #ce2c325c;
-									border-radius: 50%;
-									transition: all 0.1s ease-in;
-								}
-							}
-									
-							.social-i {
-								padding-right: 0;
-							}
-						}
+						
+						
+						
+
 					}
 				}
 				
@@ -506,6 +529,8 @@ $mobile: "(max-width: 695px)";
 						.size-photo {
 							display: table-cell;
 							padding-left: 15px;
+							text-transform: uppercase;
+							font: 10px $opensans-bold;
 							
 							@include respond-to($tablet) {
 								padding-left: 0;
@@ -516,20 +541,41 @@ $mobile: "(max-width: 695px)";
 								width: 320px;
 							}
 							
-							img {
-								padding-right: 10px;
+							a {
+								box-sizing: border-box;
+								width: 40px;
+								height: 40px;
+								display: inline-block;
+								text-align: center;
+								border-radius: 50%;
+								background-color: $white;
+								border: 1px solid $black;
+								vertical-align: middle;
+								line-height: 40px;
+								color: $black;
+								margin-right: 10px;
 								
 								@include respond-to($tablet) {
-									padding-right: 18px;
+									margin-right: 18px;
 								}
 								
 								@include respond-to($mobile) {
-									padding-right: 25px;
+									margin-right: 25px;
+								}
+							}
+							
+							.checked-size {
+								color: $white;
+								background-color: $black;
+								
+								@include respond-to($mobile) {
+									margin-right: 0;
 								}
 							}
 							
 							a:hover {
-								opacity: 0.6;
+								color: $white;
+								background-color: $black;
 								transition: all 0.2s ease-in;
 							}
 							
@@ -597,9 +643,14 @@ $mobile: "(max-width: 695px)";
 			text-transform: uppercase;
 			letter-spacing: 2px;
 			color: $black;
-			padding-bottom: 10px;
+			padding-bottom: 20px;
 			
 			@include respond-to($tablet) {
+				text-align: center;
+				padding-bottom: 35px;
+			}
+			
+			@include respond-to($tablet-small) {
 				text-align: center;
 				padding-bottom: 15px;
 			}
@@ -612,86 +663,102 @@ $mobile: "(max-width: 695px)";
 			}
 		}
 			
-		.products-grid {
+		.carousel-wrapper {
+		
 			@include respond-to($tablet-small) {
 				text-align: center;
-				display: block;
-				width: 512px;
-				margin: 0 auto;
 			}
 			
 			@include respond-to($mobile) {
-				display: none;
+				display: block;
+				width: 280px;
+				text-align: center;
+				position: relative;
+				margin-left: 20px;
 			}
+			
+			.carousel-item {
+				display: inline-block;
+				width: 30.8%;
+				margin-bottom: 18px;
+				margin-right: 19px;
+				position: relative;
+				box-sizing: border-box;
 				
-			ul {
-				list-style: none;
-				display: table;
+				@include respond-to($tablet) {
+					width: 43.8%;
+					margin-bottom: 36px;
+					margin-right: 38px;
+				}
 				
-				li {
-					display: table-row;
-					display: inline-block;
-					padding: 10px 19px 10px 0;
-					position: relative;
-					
-					@include respond-to($tablet) {
-						padding: 20px 38px 20px 0;
-					}
-					
-					@include respond-to($tablet-small) {
-						padding: 10px 20px 10px 0;
-					}
+				@include respond-to($tablet-small) {
+					width: 37%;
+					margin-bottom: 20px;
+					margin-right: 23px;
+				}
+				
+				@include respond-to($mobile) {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					opacity: 0;
+					transition: all 0.5s ease-in-out;
+					margin-bottom: 20px;
+					margin-right: 0;
+					width: 100%;
+				}
+				
+				.arrow {
+					display: none;
 					
 					@include respond-to($mobile) {
-						padding: 0;
-					}
+						position: absolute;
+						top: 0;
+						display: block;
+						width: 50px;
+						height: 100%;
+						-webkit-tap-highlight-color: rgba(0,0,0,0);
+						background: url("../img/left.png") 50% 50% / 30px no-repeat;
 
-						img {
-							display: table-cell;
-							display: block;
-							
-							@include respond-to($tablet) {
-								width: 300px;
-								height: 285px;
-							}
-							
-							@include respond-to($tablet-small) {
-								width: 240px;
-								height: 228px;
-							}
-							
-							@include respond-to($mobile) {
-								width: 280px;
-								height: 265px;
-							}
+						&.arrow-prev {
+							left: -50px;
 						}
-				}
-				
-				li:nth-child(3) {
-					padding-right: 0;
-					
-					@include respond-to($tablet) {
-						padding-right: 39px;
+						  
+						&.arrow-next {
+							right: -50px;
+							-webkit-transform: rotate(180deg);
+									transform: rotate(180deg);
+						}
 					}
-					
+				}
+
+				a {
+					padding: 0;
+				
+				img {
+					display: table-cell;
+					display: block;
+					width: 265px;
+					height: 265px;
+							
+					@include respond-to($tablet) {
+						width: 300px;
+						height: 285px;
+					}
+							
 					@include respond-to($tablet-small) {
-						padding-right: 20px;
+						width: 240px;
+						height: 228px;
 					}
-					
+							
 					@include respond-to($mobile) {
-						padding-right: 0;
+						width: 280px;
+						height: 265px;
+						position: relative;
 					}
 				}
 				
-				li:nth-child(6) {
-					padding-right: 0;
-				}
-				
-				li:nth-child(2n) {
-					@include respond-to($tablet) {
-						padding-right: 0;
-					}
-				}
 				
 				.price-grid {
 					position: absolute;
@@ -703,8 +770,9 @@ $mobile: "(max-width: 695px)";
 					color: $black;
 					padding: 0 5px 0 5px;
 					height: 20px;
-					right: 0;
-					bottom: 30px;
+					right: -8.5px;
+					bottom: 20px;
+					letter-spacing: 1px;
 					
 					@include respond-to($tablet) {
 						width: 300px;
@@ -713,7 +781,7 @@ $mobile: "(max-width: 695px)";
 						vertical-align: middle;
 						font: 22px $opensans-bold;
 						text-align: center;
-						bottom: 20px;
+						bottom: 0;
 						left: 0;
 						padding: 0;
 						letter-spacing: 2px;
@@ -721,7 +789,7 @@ $mobile: "(max-width: 695px)";
 					
 					@include respond-to($tablet-small) {
 						width: 240px;
-						bottom: 10px;
+						bottom: 0;
 						font: 18px $opensans-bold;
 						line-height: 30px;
 					}
@@ -731,6 +799,9 @@ $mobile: "(max-width: 695px)";
 						font: 18px $opensans-bold;
 						padding-top: 5px;
 						bottom: 0;
+						height: 30px;
+						left: 0;
+						opacity: 0.7;
 					}
 				}
 				
@@ -768,134 +839,42 @@ $mobile: "(max-width: 695px)";
 				}
 				
 				.col-pd {
-					right: 19px;
+					right: -8px;
 				}
 				
 				.col-lg {
-					right: 19px;
+					right: -8px;
 				}
+
+				
+			
 			}
-		}
-		
-		.carousel-wrapper {
-			display: none;
+
+				
+			}
 			
 			@include respond-to($mobile) {
-				display: block;
-				width: 280px;
-				text-align: center;
-				position: relative;
-				margin-left: 20px;
-			}
-			
-			.carousel-item {
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				opacity: 0;
-				transition: all 0.5s ease-in-out;
-				margin-bottom: 20px;
-				
-				.arrow {
-					position: absolute;
-					top: 0;
-					display: block;
-					width: 50px;
-					height: 100%;
-					-webkit-tap-highlight-color: rgba(0,0,0,0);
-					background: url("../img/left.png") 50% 50% / 30px no-repeat;
-
-					&.arrow-prev {
-						left: -50px;
+				[id^="target-item"] {
+						display: none;
 					}
-					  
-					&.arrow-next {
-						right: -50px;
-						-webkit-transform: rotate(180deg);
-								transform: rotate(180deg);
-					}
+					
+				.item-1 {
+					z-index: 2;
+					opacity: 1;
 				}
-
-				a {
-				padding: 0;
-				
-				img {
-					display: table-cell;
-					display: block;
-					width: 280px;
-					height: 265px;
-					position: relative;
+					
+				*:target ~ .item-1 {
+					opacity: 0;
 				}
-				
-				
-				.price-grid {
-					position: absolute;
-					display: inline-block;
-					background: $green;
-					z-index: 10;
-					font: 18px $opensans-bold;
-					color: $black;
-					height: 30px;
-					left: 0;
-					bottom: 0;
-					width: 280px;
-					opacity: 0.7;
-					padding-top: 5px;
-					letter-spacing: 1px;
+					
+				#target-item-1:target ~ .item-1 {
+					opacity: 1;
 				}
-				
-				.strike {
-					display: none;
+					
+				#target-item-2:target ~ .item-2, #target-item-3:target ~ .item-3, #target-item-4:target ~ .item-4, #target-item-5:target ~ .item-5, #target-item-6:target ~ .item-6 {
+					z-index: 3;
+					opacity: 1;
 				}
-				
-				.old-price-grid {
-					color: $red;
-					padding-left: 0;
-				}
-				
-				.new {
-					display: block;
-				}
-				
-				.hidden {
-					display: none;
-				}
-				
-				.col-pd {
-					right: 19px;
-				}
-				
-				.col-lg {
-					right: 19px;
-				}
-				
-				}
-				
-
-				
-			}
-			
-			[id^="target-item"] {
-					display: none;
-				}
-				
-			.item-1 {
-				z-index: 2;
-				opacity: 1;
-			}
-				
-			*:target ~ .item-1 {
-				opacity: 0;
-			}
-				
-			#target-item-1:target ~ .item-1 {
-				opacity: 1;
-			}
-				
-			#target-item-2:target ~ .item-2, #target-item-3:target ~ .item-3, #target-item-4:target ~ .item-4, #target-item-5:target ~ .item-5, #target-item-6:target ~ .item-6 {
-				z-index: 3;
-				opacity: 1;
 			}
 		}
 	}
