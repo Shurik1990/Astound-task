@@ -429,8 +429,10 @@ $mobile: "(max-width: 695px)";
 									}
 									
 									img:hover {
-										background-color: #ce2c325c;
+										background-color: $green;
 										border-radius: 50%;
+										-webkit-transition: all 0.1s ease-in;
+										-moz-transition: all 0.1s ease-in;
 										transition: all 0.1s ease-in;
 									}
 								}
@@ -440,12 +442,6 @@ $mobile: "(max-width: 695px)";
 								}
 							}
 						}
-					
-						
-						
-						
-						
-
 					}
 				}
 				
@@ -675,6 +671,7 @@ $mobile: "(max-width: 695px)";
 				text-align: center;
 				position: relative;
 				margin-left: 20px;
+				padding-bottom: 20px;
 			}
 			
 			.carousel-item {
@@ -845,12 +842,7 @@ $mobile: "(max-width: 695px)";
 				.col-lg {
 					right: -8px;
 				}
-
-				
-			
-			}
-
-				
+				}	
 			}
 			
 			@include respond-to($mobile) {
