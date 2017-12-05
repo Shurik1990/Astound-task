@@ -22,6 +22,7 @@ $white: #fff;
 $tablet: "(max-width: 940px)";
 $tablet-small: "(max-width: 715px)";
 $mobile: "(max-width: 695px)";
+$mobile-small: "(max-width: 399px)";
 
 @mixin respond-to($media) {
     @media only screen and #{$media} {
@@ -52,6 +53,12 @@ $mobile: "(max-width: 695px)";
 		padding-left: 38px;
 	}
 	
+	@include respond-to($mobile-small) {
+		min-width: 320px;
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+	
 	.strike {
 		text-decoration: line-through;
 	}
@@ -75,6 +82,10 @@ $mobile: "(max-width: 695px)";
 		
 		@include respond-to($mobile) {
 			padding: 125px 0 85px 0;
+		}
+		
+		@include respond-to($mobile-small) {
+			padding: 80px 0 50px 0;
 		}
 		
 		.cart-row {
@@ -101,6 +112,15 @@ $mobile: "(max-width: 695px)";
 					margin-right: -38px;
 				}
 				
+				@include respond-to($mobile-small) {
+					display: block;
+					width: 320px;
+					height: 340px;
+					padding-bottom: 0;
+					margin-left: 0px;
+					margin-right: 0px;
+				}
+				
 				.photo-background {
 					background: $photo-color;
 					
@@ -118,6 +138,11 @@ $mobile: "(max-width: 695px)";
 						@include respond-to($mobile) {
 							width: 326px;
 							height: 414px;
+						}
+						
+						@include respond-to($mobile-small) {
+							width: 263px;
+							height: 349px;
 						}
 					}
 				}
@@ -156,6 +181,12 @@ $mobile: "(max-width: 695px)";
 						width: 260px;
 						left: 0px;
 					}
+					
+					@include respond-to($mobile-small) {
+						left: 0px;
+						width: 100%;
+						top: 20px;
+					}
 				}
 				
 				.cart-item {
@@ -171,6 +202,11 @@ $mobile: "(max-width: 695px)";
 					@include respond-to($mobile) {
 						font: 12px $open-sans;
 						padding: 15px 0 10px 0;
+					}
+					
+					@include respond-to($mobile-small) {
+						font: 12px $open-sans;
+						padding: 30px 0 10px 0;
 					}
 				}
 				
@@ -377,6 +413,12 @@ $mobile: "(max-width: 695px)";
 									top: 665%;
 									padding-left: 0;
 								}
+								
+								@include respond-to($mobile-small) {
+									width: 265px;
+									top: 555%;
+									padding-left: 0;
+								}
 							}
 							
 							.modal:target > div {
@@ -504,6 +546,10 @@ $mobile: "(max-width: 695px)";
 							width: 320px;
 							padding-bottom: 20px;
 						}
+						
+						@include respond-to($mobile-small) {
+							width: 280px;
+						}
 					}
 					
 					.size-row {
@@ -535,6 +581,11 @@ $mobile: "(max-width: 695px)";
 							@include respond-to($mobile) {
 								text-align: center;
 								width: 320px;
+							}
+							
+							@include respond-to($mobile-small) {
+								text-align: center;
+								width: 280px;
 							}
 							
 							a {
@@ -590,6 +641,10 @@ $mobile: "(max-width: 695px)";
 					@include respond-to($mobile) {
 						margin-top: 30px;	
 						width: 320px;
+					}
+					
+					@include respond-to($mobile-small) {	
+						width: 280px;
 					}
 				
 					button[name="add"] {
@@ -656,6 +711,11 @@ $mobile: "(max-width: 695px)";
 				text-align: center;
 				width: 320px;
 				padding-bottom: 20px;
+			}
+			
+			@include respond-to($mobile-small) {
+				font: 22px $opensans-bold;
+				width: 280px;
 			}
 		}
 			
@@ -728,6 +788,21 @@ $mobile: "(max-width: 695px)";
 									transform: rotate(180deg);
 						}
 					}
+					
+					@include respond-to($mobile-small) {
+						width: 30px;
+						background: url("../img/left.png") 50% 50% / 20px no-repeat;
+						
+						&.arrow-prev {
+							left: -30px;
+						}
+						  
+						&.arrow-next {
+							right: 0px;
+							-webkit-transform: rotate(180deg);
+									transform: rotate(180deg);
+						}
+					}
 				}
 
 				a {
@@ -752,6 +827,12 @@ $mobile: "(max-width: 695px)";
 					@include respond-to($mobile) {
 						width: 280px;
 						height: 265px;
+						position: relative;
+					}
+					
+					@include respond-to($mobile-small) {
+						width: 250px;
+						height: 260px;
 						position: relative;
 					}
 				}
@@ -799,6 +880,10 @@ $mobile: "(max-width: 695px)";
 						height: 30px;
 						left: 0;
 						opacity: 0.7;
+					}
+					
+					@include respond-to($mobile-small) {
+						width: 250px;
 					}
 				}
 				
